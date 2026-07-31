@@ -21,9 +21,11 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
-# --- app data (chroma db, uploads) ---
-data/
-!data/.gitkeep
+# --- app runtime data (chroma db, uploads, cached reports) ---
+# Anchored to backend/ so it does not also swallow backend/app/data/,
+# which holds the checked-in industry benchmarks.
+/backend/data/
+!/backend/data/.gitkeep
 
 # --- editors / os ---
 .vscode/

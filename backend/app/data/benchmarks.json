@@ -1,0 +1,380 @@
+{
+  "saas": {
+    "display_name": "SaaS / Software",
+    "benchmarks": [
+      {
+        "key": "payment_terms",
+        "label": "Payment terms",
+        "market_norm": "Net 30",
+        "buyer_favourable": "Net 45-60",
+        "note": "Net 15 or upfront prepayment is below market for an annual commitment. Prepayment should buy a discount of at least 5%."
+      },
+      {
+        "key": "annual_uplift",
+        "label": "Annual price uplift cap",
+        "market_norm": "3-5% or CPI, whichever is lower",
+        "buyer_favourable": "CPI capped at 3%, first renewal flat",
+        "note": "Uncapped uplift is the single most common hidden cost in SaaS. A 7% annual uplift nearly doubles spend over 10 years."
+      },
+      {
+        "key": "termination_notice",
+        "label": "Termination for convenience",
+        "market_norm": "30-60 days written notice at term end",
+        "buyer_favourable": "30 days any time, pro-rata refund",
+        "note": "No termination-for-convenience right at all means you are locked in for the full term regardless of performance."
+      },
+      {
+        "key": "auto_renewal",
+        "label": "Auto-renewal window",
+        "market_norm": "Auto-renews with a 30-day opt-out window",
+        "buyer_favourable": "Opt-in renewal, or 90-day reminder from the vendor",
+        "note": "A 90-day opt-out window on a 12-month term means you must decide before you have even used three quarters of the service."
+      },
+      {
+        "key": "liability_cap",
+        "label": "Liability cap",
+        "market_norm": "12 months of fees paid",
+        "buyer_favourable": "12 months of fees, uncapped for data breach, IP infringement and wilful misconduct",
+        "note": "A cap set at 3 months of fees, or at the fees paid in the month of the incident, is well below market."
+      },
+      {
+        "key": "sla_credits",
+        "label": "Uptime SLA and service credits",
+        "market_norm": "99.9% uptime, 10% monthly credit on breach",
+        "buyer_favourable": "99.95% uptime, escalating credits, termination right after repeated breach",
+        "note": "Credits that must be claimed by the customer within 30 days are usually never claimed. Ask for automatic credits."
+      },
+      {
+        "key": "data_and_exit",
+        "label": "Data export and exit assistance",
+        "market_norm": "Data returned in a standard format within 30 days of termination",
+        "buyer_favourable": "Self-serve export at any time, 90-day post-termination access window",
+        "note": "Charging a fee for data export at exit is a lock-in tactic and is negotiable in almost every deal."
+      }
+    ]
+  },
+  "professional_services": {
+    "display_name": "Professional Services / Consulting",
+    "benchmarks": [
+      {
+        "key": "payment_terms",
+        "label": "Payment terms",
+        "market_norm": "Net 30 on invoice, monthly in arrears",
+        "buyer_favourable": "Net 45 in arrears, tied to accepted deliverables",
+        "note": "Paying in advance for unperformed work removes all of your leverage if delivery slips."
+      },
+      {
+        "key": "rate_card",
+        "label": "Rate card and annual rate increases",
+        "market_norm": "Rates fixed for 12 months, then CPI",
+        "buyer_favourable": "Rates fixed for the whole engagement, volume-tiered discounts",
+        "note": "Ask for a blended rate rather than per-grade rates; it stops the supplier substituting expensive seniors into routine work."
+      },
+      {
+        "key": "change_control",
+        "label": "Change control and scope creep",
+        "market_norm": "Written change order required, priced before work starts",
+        "buyer_favourable": "Change orders priced at the original rate card, with a not-to-exceed cap",
+        "note": "Without a not-to-exceed cap, a time-and-materials engagement has no ceiling."
+      },
+      {
+        "key": "acceptance",
+        "label": "Deliverable acceptance",
+        "market_norm": "10 business days to accept or reject in writing",
+        "buyer_favourable": "15 business days, deemed rejected if silent, rework at supplier cost",
+        "note": "Watch for 'deemed accepted if no response' clauses paired with a short window."
+      },
+      {
+        "key": "key_personnel",
+        "label": "Key personnel continuity",
+        "market_norm": "Named leads cannot be replaced without customer consent",
+        "buyer_favourable": "Named leads locked for the engagement, replacements matched on seniority at no extra cost",
+        "note": "The team who pitched is often not the team who delivers. Name them in the contract."
+      },
+      {
+        "key": "ip_ownership",
+        "label": "IP ownership of deliverables",
+        "market_norm": "Customer owns bespoke deliverables, supplier keeps pre-existing IP",
+        "buyer_favourable": "Customer owns deliverables plus a perpetual licence to embedded supplier IP",
+        "note": "If the supplier retains ownership of work you paid for, you cannot maintain it without them."
+      },
+      {
+        "key": "non_solicit",
+        "label": "Non-solicitation of staff",
+        "market_norm": "Mutual, 6-12 months after engagement ends",
+        "buyer_favourable": "Mutual, 6 months, with a buy-out fee option",
+        "note": "One-sided non-solicits that only bind the customer are common and are usually conceded when challenged."
+      }
+    ]
+  },
+  "logistics": {
+    "display_name": "Logistics / Freight",
+    "benchmarks": [
+      {
+        "key": "payment_terms",
+        "label": "Payment terms",
+        "market_norm": "Net 30 from invoice date",
+        "buyer_favourable": "Net 45-60, with disputed lines not delaying payment of the rest",
+        "note": "Quick-pay discounts of 1-2% for Net 10 are standard and worth modelling against your cost of capital."
+      },
+      {
+        "key": "fuel_surcharge",
+        "label": "Fuel surcharge mechanism",
+        "market_norm": "Indexed to a published national fuel index, reviewed monthly",
+        "buyer_favourable": "Published index, capped, with a floor that passes savings back when fuel falls",
+        "note": "Surcharges that only ratchet upward and never fall are the classic hidden cost in freight contracts."
+      },
+      {
+        "key": "accessorials",
+        "label": "Accessorial and ancillary charges",
+        "market_norm": "Published accessorial schedule fixed for the term",
+        "buyer_favourable": "Closed list of accessorials; anything not listed cannot be charged",
+        "note": "Open-ended accessorial schedules the supplier can amend at will routinely add 10-20% to landed cost."
+      },
+      {
+        "key": "rate_review",
+        "label": "Annual rate review",
+        "market_norm": "Annual review indexed to CPI or a transport cost index",
+        "buyer_favourable": "Annual review capped at CPI, with a benchmarking right against market rates",
+        "note": "A benchmarking clause lets you test rates mid-term without terminating."
+      },
+      {
+        "key": "volume_commitment",
+        "label": "Minimum volume commitment",
+        "market_norm": "No minimum, or a soft target with no penalty",
+        "buyer_favourable": "No committed minimum; discounts tiered on actual volume",
+        "note": "Committed minimums with shortfall penalties transfer demand risk from the carrier to you."
+      },
+      {
+        "key": "liability_cargo",
+        "label": "Cargo loss and damage liability",
+        "market_norm": "Standard carrier liability per applicable convention",
+        "buyer_favourable": "Declared value coverage for high-value lanes, agreed claims turnaround",
+        "note": "Check the claims notification window; 7-day windows are easy to miss and void the claim."
+      },
+      {
+        "key": "service_levels",
+        "label": "On-time performance SLA",
+        "market_norm": "95% on-time delivery measured monthly",
+        "buyer_favourable": "97% on-time, service credits, termination right on sustained failure",
+        "note": "An SLA with no financial consequence is a target, not a service level."
+      }
+    ]
+  },
+  "manufacturing": {
+    "display_name": "Manufacturing / Supply",
+    "benchmarks": [
+      {
+        "key": "payment_terms",
+        "label": "Payment terms",
+        "market_norm": "Net 30-45 from delivery",
+        "buyer_favourable": "Net 60 from receipt and acceptance of goods",
+        "note": "Anchor payment to acceptance, not to despatch, so defective shipments do not become your financing problem."
+      },
+      {
+        "key": "price_adjustment",
+        "label": "Raw material price adjustment",
+        "market_norm": "Indexed to a published commodity index, reviewed quarterly",
+        "buyer_favourable": "Symmetric index with a cap and a collar, passing decreases back",
+        "note": "Asymmetric pass-through clauses that only move upward are widespread and highly negotiable."
+      },
+      {
+        "key": "volume_commitment",
+        "label": "Minimum order quantity / take-or-pay",
+        "market_norm": "MOQ per order, no annual take-or-pay",
+        "buyer_favourable": "Rolling forecast with a non-binding horizon beyond 90 days",
+        "note": "Take-or-pay commitments are the largest hidden liability in supply agreements."
+      },
+      {
+        "key": "lead_time",
+        "label": "Lead time and delivery performance",
+        "market_norm": "Agreed lead time, 95% on-time-in-full",
+        "buyer_favourable": "Committed lead time with liquidated damages for late delivery",
+        "note": "Suppliers often accept OTIF measurement but resist any financial consequence. Push for both."
+      },
+      {
+        "key": "quality_warranty",
+        "label": "Quality warranty period",
+        "market_norm": "12 months from delivery",
+        "buyer_favourable": "24 months from commissioning, plus epidemic failure protection",
+        "note": "Warranties that run from despatch rather than commissioning quietly shorten your cover."
+      },
+      {
+        "key": "tooling_ownership",
+        "label": "Tooling and equipment ownership",
+        "market_norm": "Customer owns tooling it paid for",
+        "buyer_favourable": "Customer owns tooling with a right of immediate physical retrieval",
+        "note": "Owning tooling on paper is worthless without an enforceable right to collect it from the supplier's floor."
+      },
+      {
+        "key": "termination_notice",
+        "label": "Termination for convenience",
+        "market_norm": "90 days written notice",
+        "buyer_favourable": "60 days, liability limited to finished goods and committed raw material",
+        "note": "Check what you owe on termination; open-ended reimbursement of supplier costs is a blank cheque."
+      }
+    ]
+  },
+  "staffing": {
+    "display_name": "Staffing / Recruitment",
+    "benchmarks": [
+      {
+        "key": "markup_rate",
+        "label": "Contractor mark-up",
+        "market_norm": "18-28% over pay rate for standard roles",
+        "buyer_favourable": "15-20%, tiered down as volume rises",
+        "note": "Mark-up should be transparent and separately stated. Bundled all-in rates hide the margin."
+      },
+      {
+        "key": "permanent_fee",
+        "label": "Permanent placement fee",
+        "market_norm": "18-22% of first-year salary",
+        "buyer_favourable": "15% with volume rebates, capped in absolute terms for senior hires",
+        "note": "A percentage fee with no absolute cap is expensive on executive hires."
+      },
+      {
+        "key": "rebate_period",
+        "label": "Replacement guarantee / rebate",
+        "market_norm": "Sliding rebate over 12 weeks",
+        "buyer_favourable": "Free replacement within 12 weeks, then sliding rebate to 6 months",
+        "note": "Check whether the rebate is cash back or a credit note. Credit notes are worth far less."
+      },
+      {
+        "key": "conversion_fee",
+        "label": "Contractor-to-permanent conversion fee",
+        "market_norm": "Sliding fee, reaching zero after 12 months of engagement",
+        "buyer_favourable": "Zero fee after 6 months of continuous engagement",
+        "note": "Flat conversion fees that never taper are a hidden penalty for hiring people who work out well."
+      },
+      {
+        "key": "payment_terms",
+        "label": "Payment terms",
+        "market_norm": "Net 30 from timesheet approval",
+        "buyer_favourable": "Net 45 from consolidated monthly self-bill",
+        "note": "Weekly invoicing on Net 7 terms is common in staffing and is usually negotiable to monthly."
+      },
+      {
+        "key": "exclusivity",
+        "label": "Exclusivity / preferred supplier lock-in",
+        "market_norm": "Non-exclusive preferred supplier status",
+        "buyer_favourable": "Non-exclusive, with the right to run a panel",
+        "note": "Exclusivity removes your ability to price-test. Rarely worth the discount offered for it."
+      },
+      {
+        "key": "rate_increases",
+        "label": "Annual rate increases",
+        "market_norm": "Reviewed annually, indexed to wage inflation",
+        "buyer_favourable": "Mark-up fixed for the term; only the underlying pay rate moves",
+        "note": "Insist that annual increases apply to pay rate only, not to the agency's mark-up percentage."
+      }
+    ]
+  },
+  "construction": {
+    "display_name": "Construction / Facilities",
+    "benchmarks": [
+      {
+        "key": "payment_terms",
+        "label": "Payment terms",
+        "market_norm": "Monthly valuation, Net 30 from certification",
+        "buyer_favourable": "Net 45 from certification, with agreed valuation dates",
+        "note": "Check local prompt-payment legislation before agreeing anything longer than statute allows."
+      },
+      {
+        "key": "retention",
+        "label": "Retention",
+        "market_norm": "5% retention, half released at practical completion",
+        "buyer_favourable": "5% retention, balance released 12 months after practical completion",
+        "note": "Retention is your main leverage over defect rectification. Do not trade it away for a small discount."
+      },
+      {
+        "key": "variations",
+        "label": "Variations and change orders",
+        "market_norm": "Priced from the contract rate schedule before work starts",
+        "buyer_favourable": "Rate schedule fixed for the project, dayworks capped",
+        "note": "Variations priced after the fact, at rates set by the contractor, are where project budgets die."
+      },
+      {
+        "key": "liquidated_damages",
+        "label": "Delay liquidated damages",
+        "market_norm": "0.1-0.5% of contract value per week, capped at 5-10%",
+        "buyer_favourable": "Genuine pre-estimate of loss, capped at 10%",
+        "note": "A cap that is too low makes late delivery cheaper for the contractor than mobilising more labour."
+      },
+      {
+        "key": "extension_of_time",
+        "label": "Extension of time grounds",
+        "market_norm": "Relief for client-caused delay and defined force majeure",
+        "buyer_favourable": "Closed list of relief events, notice required within 14 days",
+        "note": "Open-ended 'any cause beyond the contractor's control' wording will absorb almost every delay."
+      },
+      {
+        "key": "defects_liability",
+        "label": "Defects liability period",
+        "market_norm": "12 months from practical completion",
+        "buyer_favourable": "24 months, with latent defect cover backed by collateral warranties",
+        "note": "Ask who carries the defect risk after the period expires and whether warranties are assignable."
+      },
+      {
+        "key": "insurance_bonds",
+        "label": "Insurance and performance bonds",
+        "market_norm": "Performance bond at 10% of contract value",
+        "buyer_favourable": "On-demand bond at 10%, plus parent company guarantee",
+        "note": "A conditional bond is much harder to call than an on-demand one. The difference matters when it matters."
+      }
+    ]
+  },
+  "default": {
+    "display_name": "General Commercial",
+    "benchmarks": [
+      {
+        "key": "payment_terms",
+        "label": "Payment terms",
+        "market_norm": "Net 30",
+        "buyer_favourable": "Net 45-60",
+        "note": "Shorter terms than Net 30 should be traded for a discount, not conceded for free."
+      },
+      {
+        "key": "annual_uplift",
+        "label": "Annual price increase",
+        "market_norm": "CPI, or 3-5%",
+        "buyer_favourable": "CPI capped at 3%, first year flat",
+        "note": "Uncapped or supplier-discretion price increases are the most common hidden cost in any contract."
+      },
+      {
+        "key": "termination_notice",
+        "label": "Termination for convenience",
+        "market_norm": "30-90 days written notice",
+        "buyer_favourable": "30 days, no early termination charge",
+        "note": "Also check the exit costs; a short notice period is worthless if leaving triggers a large fee."
+      },
+      {
+        "key": "auto_renewal",
+        "label": "Auto-renewal",
+        "market_norm": "Auto-renews with a 30-day opt-out window",
+        "buyer_favourable": "Opt-in renewal with a written reminder before the window opens",
+        "note": "Long opt-out windows combined with automatic renewal are how contracts silently extend for another full term."
+      },
+      {
+        "key": "liability_cap",
+        "label": "Liability cap",
+        "market_norm": "12 months of fees paid",
+        "buyer_favourable": "12 months of fees, with carve-outs for breach of confidentiality and wilful misconduct",
+        "note": "A mutual cap is standard. A cap that protects only the supplier is not."
+      },
+      {
+        "key": "indemnities",
+        "label": "Indemnities",
+        "market_norm": "Mutual indemnities for third-party claims",
+        "buyer_favourable": "Supplier indemnifies for IP infringement and data breach, mutual otherwise",
+        "note": "Read indemnities alongside the liability cap; an indemnity carved out of the cap is unlimited exposure."
+      },
+      {
+        "key": "assignment",
+        "label": "Assignment and change of control",
+        "market_norm": "Neither party may assign without consent, not unreasonably withheld",
+        "buyer_favourable": "Customer may assign within its group freely; supplier change of control gives a termination right",
+        "note": "Without a change-of-control right you can end up contracted to your supplier's acquirer, possibly a competitor."
+      }
+    ]
+  }
+}

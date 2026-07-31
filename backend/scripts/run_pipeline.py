@@ -1,3 +1,14 @@
+"""
+Walk the parse → chunk → embed → store → search pipeline end to end
+and print what happens at each step.
+
+This is a debugging script, not a test. Run it from backend/ with:
+    python -m scripts.run_pipeline
+
+It used to be called test_parse.py, which meant pytest imported it
+during collection and ran the whole pipeline as a side effect.
+"""
+
 from app.services.pdf_parser import parse_pdf, get_document_stats
 from app.services.chunker import chunk_document, get_chunk_stats
 from app.services.embedder import embed_chunks, embed_query

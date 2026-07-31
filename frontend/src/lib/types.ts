@@ -59,3 +59,76 @@ export interface AnswerResponse {
   answer: string;
   sources: string[];
 }
+
+// ── Assessment ───────────────────────────────────────────────
+// The two 0-100 scores and the evidence behind them.
+
+export type RiskBand = "LOW" | "MODERATE" | "HIGH";
+export type MarginBand = "UNKNOWN" | "TIGHT" | "SOME_ROOM" | "STRONG_LEVERAGE";
+
+/** Where a contract term sits against the industry benchmark. */
+export type LeverPosition =
+  | "worse_than_market"
+  | "slightly_worse"
+  | "at_market"
+  | "better_than_market"
+  | "not_addressed";
+
+export interface ScoreDetail {
+  score: number; // 0-100
+  band: string; // RiskBand or MarginBand, depending on the meter
+  drivers: string[]; // plain English reasons for the number
+}
+
+export interface HiddenClause {
+  type: string;
+  severity: RiskLevel;
+  quote: string;
+  why_it_matters: string;
+  page_num: number;
+}
+
+export interface NegotiationLever {
+  benchmark_key: string;
+  label: string;
+  contract_position: string;
+  market_norm: string;
+  position: LeverPosition;
+  ask: string;
+  rationale: string;
+  estimated_impact: RiskLevel;
+}
+
+export interface MarketSource {
+  title: string;
+  url: string;
+}
+
+export interface Industry {
+  key: string;
+  display_name: string;
+}
+
+export interface AssessmentResponse {
+  collection_name: string;
+  industry: string;
+  industry_display_name: string;
+  contract_type: string;
+  risk: ScoreDetail;
+  margin: ScoreDetail;
+  hidden_clauses: HiddenClause[];
+  levers: NegotiationLever[];
+  market_summary: string;
+  market_trends: string[];
+  market_sources: MarketSource[];
+  risk_counts: Record<RiskLevel, number>;
+  total_clauses_analyzed: number;
+  cached: boolean;
+}
+
+export interface AdviceResponse {
+  question: string;
+  answer: string;
+  sources: string[];
+  web_sources: MarketSource[];
+}

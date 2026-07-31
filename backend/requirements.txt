@@ -6,7 +6,8 @@ PyMuPDF==1.24.11
 pypdf==4.2.0
 sentence-transformers==3.0.1
 chromadb==0.5.0
-openai==1.30.0
+# 2.x is required for the Responses API and its hosted web_search tool
+openai==2.51.0
 python-dotenv==1.0.1
 pydantic==2.7.1
 pydantic-settings==2.3.4

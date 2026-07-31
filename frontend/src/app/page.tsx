@@ -2,25 +2,34 @@
 
 import { useState } from "react";
 import { ChatPanel } from "@/components/ChatPanel";
+import { NegotiatePanel } from "@/components/NegotiatePanel";
 import { RiskPanel } from "@/components/RiskPanel";
+import { ScorePanel } from "@/components/ScorePanel";
 import { SearchPanel } from "@/components/SearchPanel";
 import { TermsPanel } from "@/components/TermsPanel";
 import { UploadPanel } from "@/components/UploadPanel";
 import { Button, Card } from "@/components/ui";
 import type { UploadResponse } from "@/lib/types";
 
-const TABS = ["Ask", "Risk", "Key terms", "Search"] as const;
+const TABS = [
+  "Score",
+  "Negotiate",
+  "Ask",
+  "Risk",
+  "Key terms",
+  "Search",
+] as const;
 type Tab = (typeof TABS)[number];
 
 export default function Home() {
   const [file, setFile] = useState<File | null>(null);
   const [doc, setDoc] = useState<UploadResponse | null>(null);
-  const [tab, setTab] = useState<Tab>("Ask");
+  const [tab, setTab] = useState<Tab>("Score");
 
   function reset() {
     setFile(null);
     setDoc(null);
-    setTab("Ask");
+    setTab("Score");
   }
 
   return (
@@ -31,8 +40,8 @@ export default function Home() {
             Contract<span className="text-indigo-400">Sense</span>
           </h1>
           <p className="mt-1 text-sm text-gray-500">
-            Upload a contract. Ask questions, surface risky clauses, extract the
-            key terms.
+            Upload a contract. Score its risk, find where you can negotiate,
+            and ask for advice.
           </p>
         </div>
         {doc && (
@@ -67,12 +76,13 @@ export default function Home() {
             </dl>
           </Card>
 
-          <nav className="flex gap-1 rounded-lg border border-white/10 bg-white/[0.02] p-1">
+          {/* Six tabs no longer fit in a row on a phone, so they wrap */}
+          <nav className="flex flex-wrap gap-1 rounded-lg border border-white/10 bg-white/[0.02] p-1">
             {TABS.map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`flex-1 rounded-md px-4 py-2 text-sm font-medium transition ${
+                className={`flex-1 rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap transition ${
                   tab === t
                     ? "bg-indigo-500 text-white"
                     : "text-gray-400 hover:bg-white/5 hover:text-gray-200"
@@ -84,6 +94,10 @@ export default function Home() {
           </nav>
 
           <Card>
+            {tab === "Score" && <ScorePanel collection={doc.collection_name} />}
+            {tab === "Negotiate" && (
+              <NegotiatePanel collection={doc.collection_name} />
+            )}
             {tab === "Ask" && <ChatPanel collection={doc.collection_name} />}
             {tab === "Risk" && <RiskPanel file={file} />}
             {tab === "Key terms" && <TermsPanel file={file} />}

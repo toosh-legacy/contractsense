@@ -1,5 +1,8 @@
 import type {
+  AdviceResponse,
   AnswerResponse,
+  AssessmentResponse,
+  Industry,
   KeyTermsResponse,
   RiskReport,
   SearchResponse,
@@ -75,6 +78,27 @@ export const api = {
   /** Retrieval-augmented answer to a natural language question. */
   ask: (collection_name: string, question: string) =>
     request<AnswerResponse>("/ask", withJson({ collection_name, question })),
+
+  /** Industries we hold negotiation benchmarks for. */
+  industries: () => request<Industry[]>("/industries", { method: "GET" }),
+
+  /**
+   * Score a contract on risk and negotiating room. Expensive — a dozen
+   * or more model calls — so the backend caches the result.
+   */
+  assess: (collection_name: string, industry?: string, refresh = false) =>
+    request<AssessmentResponse>(
+      "/assess",
+      withJson({ collection_name, industry: industry ?? null, refresh }),
+    ),
+
+  /** Fetch a cached assessment. 404s if the contract hasn't been assessed. */
+  getAssessment: (collection_name: string) =>
+    request<AssessmentResponse>(`/assess/${collection_name}`, { method: "GET" }),
+
+  /** Negotiation advice grounded in the contract, its scores and the market. */
+  advise: (collection_name: string, question: string) =>
+    request<AdviceResponse>("/advise", withJson({ collection_name, question })),
 
   health: () => request<{ status: string; version: string }>("/health", { method: "GET" }),
 };

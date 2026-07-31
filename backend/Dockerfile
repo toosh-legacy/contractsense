@@ -28,7 +28,7 @@ RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTr
 
 COPY app ./app
 
-RUN mkdir -p data/uploads data/chroma
+RUN mkdir -p data/uploads data/chroma data/reports
 
 EXPOSE 8000
 

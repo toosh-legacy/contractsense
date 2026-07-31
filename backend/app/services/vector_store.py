@@ -68,6 +68,59 @@ def store_embeddings(collection_name: str, embedded_chunks: list[dict]) -> int:
     return len(ids)
 
 
+def get_all_chunks(collection_name: str) -> list[dict]:
+    """
+    Read every chunk of a document back out of ChromaDB, in order.
+
+    Upload already parsed, chunked and stored this document. Anything
+    that needs the whole contract afterwards can read it back from here
+    instead of asking the user to upload the same PDF a second time.
+
+    Args:
+        collection_name: Which document collection to read
+
+    Returns:
+        List of chunks sorted by chunk_index, each with
+        chunk_id, text, page_num and chunk_index
+    """
+    client = get_chroma_client()
+    collection = get_or_create_collection(client, collection_name)
+
+    # No query here — collection.get() with no filter returns everything
+    results = collection.get(include=["documents", "metadatas"])
+
+    chunks = []
+    for chunk_id, doc, meta in zip(
+        results["ids"],
+        results["documents"],
+        results["metadatas"],
+    ):
+        chunks.append({
+            "chunk_id": chunk_id,
+            "text": doc,
+            "page_num": meta.get("page_num", 1),
+            "chunk_index": meta.get("chunk_index", 0),
+        })
+
+    # Chroma makes no promise about ordering, and reading a contract
+    # out of order would scramble the analysis
+    chunks.sort(key=lambda c: c["chunk_index"])
+
+    return chunks
+
+
+def collection_exists(collection_name: str) -> bool:
+    """
+    Check whether a document has been uploaded and indexed.
+
+    Note we deliberately do not use get_or_create_collection here —
+    that would create an empty collection as a side effect.
+    """
+    client = get_chroma_client()
+    existing = [c.name for c in client.list_collections()]
+    return collection_name in existing
+
+
 def search(
     collection_name: str,
     query_embedding: list[float],
